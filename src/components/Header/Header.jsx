@@ -1,4 +1,10 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import s from "./Header.module.css";
+import clsx from "clsx";
+
+const buildLinkClass = ({ isActive }) => {
+  return clsx(s.link, isActive && s.active);
+};
 
 const Header = () => {
   return (
@@ -7,10 +13,14 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink className={buildLinkClass} to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink className={buildLinkClass} to="/about">
+              About
+            </NavLink>
           </li>
         </ul>
       </nav>
