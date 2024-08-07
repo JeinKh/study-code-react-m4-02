@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { fetchUserById } from "../../services/api";
 
 const UserDetails = () => {
@@ -21,6 +21,12 @@ const UserDetails = () => {
       </h2>
       <p>Email: {user.email}</p>
       <p>Age: {user.age}</p>
+
+      <div className="flex">
+        <NavLink to="address">Address</NavLink>
+        <NavLink to="posts">Posts</NavLink>
+      </div>
+      <Outlet />
     </div>
   );
 };
