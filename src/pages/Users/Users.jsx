@@ -5,15 +5,16 @@ import { fetchUsers } from "../../services/api";
 const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    try {
-      const getData = async () => {
-        const data = await fetchUsers();
-        setUsers(data);
-      };
-      getData();
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const getData = async () => {
+    //     const data = await fetchUsers();
+    //     setUsers(data);
+    //   };
+    //   getData();
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    fetchUsers().then((data) => setUsers(data));
   }, []);
   return (
     <div>
