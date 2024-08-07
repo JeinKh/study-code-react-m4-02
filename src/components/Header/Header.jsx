@@ -22,6 +22,11 @@ const Header = () => {
               About
             </NavLink>
           </li>
+          <li>
+            <NavLink className={buildLinkClass} to="/users">
+              Users
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
